@@ -1,4 +1,4 @@
-from tkinter import * #type: ignore
+from tkinter import *
 from pytube import YouTube
 
 root = Tk()
@@ -9,13 +9,15 @@ root.geometry("650x600")
 txt1 = Label(root,text = "Youtube Videos/Audio Download",font=("New Romania Times",25,"bold","underline"),fg="black")
 txt1.place(x=70,y=20)
 
-link = None
+link = None #To have link as a Global Variable
 
 def link_entry(text):
     global link  # Declare link as a global variable
     link = Entry(root, font=("New Romania Times", 20, "bold"), fg="black", border=5, width=30)
     link.place(x=100, y=110)
     link.insert(0, text)
+
+#ClearInput function deletes the text written previously i.e Enter the Youtube link and Error!!! when pressing on Entry
 def clearInput(event):
     global link  # Access the global link variable
     if link is not None:
